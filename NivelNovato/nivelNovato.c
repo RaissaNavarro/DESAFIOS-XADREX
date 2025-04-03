@@ -31,7 +31,23 @@ int main () {
         
     } while (cont < 8);
 
-
     printf("*=====================*\n");
+
+
+    printf("\n*=====================*\n");
+    printf("Movimento do CAVALO\n");
+    for (int j = 1; j <= 2 ; j++){
+
+        for( int k = 1; k <= j; k++){
+            printf("Baixo\n");
+        }
+        printf("Esquerda\n");
+        printf("*=====================*");
+        
+    }
     
+
+    
+
+
 }
