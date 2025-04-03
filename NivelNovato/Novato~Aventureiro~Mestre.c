@@ -1,50 +1,55 @@
 #include <stdio.h>
 
-int main () {
+// Função para mover a torre 
+void moverTorre(int casas) {
+    if (casas == 0) return;
+    printf("Direita.\n");
+    moverTorre(casas - 1);
+}
 
-    int i = 0;
-    int cont = 0;
+// Função para mover o Bispo 
+void moverBispo(int casas, int x, int y) {
+    if (casas == 0) return;
+    printf("Cima, Direita.\n");
+    moverBispo(casas - 1, x + 1, y + 1);
+}
 
+// Função para mover a Rainha 
+void moverRainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda.\n");
+    moverRainha(casas - 1);
+}
+
+// Função para mover o Cavalo 
+void moverCavalo(int movimentos) {
+    for (int i = 0; i < movimentos; i++) {
+        printf("Cima\n");
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+}
+
+int main() {
     printf("\n*=====================*\n");
     printf("Movimento da TORRE:\n");
-    for (int i = 0; i < 5; i++){
-        printf("Direita.\n");
-    }
-    printf("*=====================*\n");
-
-    printf("\n*=====================*\n");
-    printf("Movimento do BISPO\n");
-
-    while (i <= 4 ){
-        printf("Cima, Direita.\n");
-        i++;
-    }
-    printf("*=====================*\n");
-
-    printf("\n*=====================*\n");
-    printf("Movimento da RAINHA\n");
-
-    do
-    { 
-        printf("Esquerda.\n"); 
-        cont++; 
-        
-    } while (cont < 8);
+    moverTorre(5);
+    printf("*=====================*\n\n");
 
     printf("*=====================*\n");
+    printf("Movimento do BISPO:\n");
+    moverBispo(4, 0, 0);
+    printf("*=====================*\n\n");
 
-
-    printf("\n*=====================*\n");
-    printf("Movimento do CAVALO\n");
-    for (int j = 1; j <= 2; j++) {
-        printf("Baixo\n");
-    }
-    int k = 1;
-    while (k <= 1) {
-        printf("Esquerda\n");
-        k++;
-    }
     printf("*=====================*\n");
+    printf("Movimento da RAINHA:\n");
+    moverRainha(8);
+    printf("*=====================*\n\n");
+
+    printf("*=====================*\n");
+    printf("Movimento do CAVALO:\n");
+    moverCavalo(1); // Faz um movimento do Cavalo
+    printf("*=====================*\n\n");
     
-
+    return 0;
 }
