@@ -12,7 +12,7 @@ int main () {
     }
     printf("*=====================*\n");
 
-    printf("\n*=====================*");
+    printf("\n*=====================*\n");
     printf("Movimento do BISPO\n");
 
     while (i <= 4 ){
